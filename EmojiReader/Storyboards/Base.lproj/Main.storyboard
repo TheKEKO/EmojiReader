@@ -183,16 +183,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="UuR-ME-3If">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="nTz-4D-a13"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="X2U-gk-fk5"/>
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="nTz-4D-a13">
+                            <connections>
+                                <segue destination="dhp-Pw-8rl" kind="unwind" unwindAction="unwindSegueWithSegue:" id="sxP-GS-6Ls"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="X2U-gk-fk5">
+                            <connections>
+                                <segue destination="dhp-Pw-8rl" kind="unwind" identifier="saveSegue" unwindAction="unwindSegueWithSegue:" id="wxF-Jp-Nes"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="UHx-T8-TpV" id="DHR-8h-9aS"/>
                         <outlet property="emojiTextField" destination="teF-CE-5tK" id="NdU-eb-deT"/>
                         <outlet property="nameTextField" destination="hyp-j1-Hi8" id="dNb-ub-psa"/>
+                        <outlet property="saveButton" destination="X2U-gk-fk5" id="RbW-tY-Dsd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esx-re-Hln" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dhp-Pw-8rl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2207.2463768115945" y="166.74107142857142"/>
         </scene>

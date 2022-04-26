@@ -49,8 +49,8 @@
 			isa = PBXGroup;
 			children = (
 				D4EC1FD22816E3F8006257A3 /* EmojiTableViewController.swift */,
-				D4EC1FD42816EB4C006257A3 /* EmojiTableViewCell.swift */,
 				D4BFA322281874A700DE02A2 /* NewEmojiTableViewController.swift */,
+				D4EC1FD42816EB4C006257A3 /* EmojiTableViewCell.swift */,
 				D4EC1FC22816E391006257A3 /* ViewController.swift */,
 			);
 			path = ViewControllers;
