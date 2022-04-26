@@ -43,6 +43,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4BFA31B281871B500DE02A2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4EC1FD22816E3F8006257A3 /* EmojiTableViewController.swift */,
+				D4EC1FD42816EB4C006257A3 /* EmojiTableViewCell.swift */,
+				D4EC1FC22816E391006257A3 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D4BFA31C281871CC00DE02A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D46AE3872816F80000EE7993 /* EmojiModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4BFA31D281871E300DE02A2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D4EC1FC42816E391006257A3 /* Main.storyboard */,
+				D4EC1FC92816E392006257A3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D4BFA31E281871F400DE02A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4EC1FC72816E392006257A3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4BFA31F281871FF00DE02A2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D4EC1FBE2816E391006257A3 /* AppDelegate.swift */,
+				D4EC1FC02816E391006257A3 /* SceneDelegate.swift */,
+				D4EC1FCC2816E392006257A3 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		D4EC1FB22816E391006257A3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +107,11 @@
 		D4EC1FBD2816E391006257A3 /* EmojiReader */ = {
 			isa = PBXGroup;
 			children = (
-				D4EC1FBE2816E391006257A3 /* AppDelegate.swift */,
-				D4EC1FC02816E391006257A3 /* SceneDelegate.swift */,
-				D4EC1FC22816E391006257A3 /* ViewController.swift */,
-				D4EC1FD22816E3F8006257A3 /* EmojiTableViewController.swift */,
-				D4EC1FD42816EB4C006257A3 /* EmojiTableViewCell.swift */,
-				D4EC1FC42816E391006257A3 /* Main.storyboard */,
-				D46AE3872816F80000EE7993 /* EmojiModel.swift */,
-				D4EC1FC72816E392006257A3 /* Assets.xcassets */,
-				D4EC1FC92816E392006257A3 /* LaunchScreen.storyboard */,
-				D4EC1FCC2816E392006257A3 /* Info.plist */,
+				D4BFA31B281871B500DE02A2 /* ViewControllers */,
+				D4BFA31C281871CC00DE02A2 /* Models */,
+				D4BFA31D281871E300DE02A2 /* Storyboards */,
+				D4BFA31E281871F400DE02A2 /* Resources */,
+				D4BFA31F281871FF00DE02A2 /* App */,
 			);
 			path = EmojiReader;
 			sourceTree = "<group>";
@@ -301,7 +341,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWJHPQLGW8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmojiReader/Info.plist;
+				INFOPLIST_FILE = EmojiReader/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,7 +369,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWJHPQLGW8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmojiReader/Info.plist;
+				INFOPLIST_FILE = EmojiReader/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
