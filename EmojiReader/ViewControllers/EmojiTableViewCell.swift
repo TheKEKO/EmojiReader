@@ -14,7 +14,6 @@ class EmojiTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     func set(object: Emoji) {
@@ -22,5 +21,4 @@ class EmojiTableViewCell: UITableViewCell {
         self.nameLabel.text = object.name
         self.deskriptionLabel.text = object.deskription
     }
-    
 }

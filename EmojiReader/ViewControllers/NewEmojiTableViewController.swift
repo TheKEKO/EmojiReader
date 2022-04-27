@@ -21,7 +21,6 @@ class NewEmojiTableViewController: UITableViewController {
         super.viewDidLoad()
         updateUI()
         updateSaveButtonState()
-        
     }
     
     private func updateSaveButtonState() {
@@ -52,5 +51,4 @@ class NewEmojiTableViewController: UITableViewController {
         
         self.emoji = Emoji(emoji: emoji, name: name, deskription: description, isFavourite: self.emoji.isFavourite)
     }
-    
 }

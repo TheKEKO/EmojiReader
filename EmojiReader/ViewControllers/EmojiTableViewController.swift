@@ -32,7 +32,6 @@ class EmojiTableViewController: UITableViewController {
         } else { let newIndexPath = IndexPath(row: objects.count, section: 0)
             objects.append(emoji)
             tableView.insertRows(at: [newIndexPath], with: .fade)
-            
         }
     }
     
@@ -48,7 +47,6 @@ class EmojiTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -74,7 +72,6 @@ class EmojiTableViewController: UITableViewController {
             objects.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        
     }
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -85,6 +82,7 @@ class EmojiTableViewController: UITableViewController {
         objects.insert(movedEmoji, at: destinationIndexPath.row)
         tableView.reloadData()
     }
+    
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let done = doneAction(at: indexPath)
         let favourite = favoriteAction(at: indexPath)
@@ -101,6 +99,7 @@ class EmojiTableViewController: UITableViewController {
         action.image = UIImage(systemName: "checkmark.circle")
         return action
     }
+    
     func favoriteAction(at indexPath: IndexPath) -> UIContextualAction {
         var object = objects[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "Favourite") { (action, view, completion) in
@@ -108,6 +107,7 @@ class EmojiTableViewController: UITableViewController {
             self.objects[indexPath.row] = object
             completion(true)
         }
+        
         action.backgroundColor = object.isFavourite ? .systemPurple : .systemGray
         action.image = UIImage(systemName: "heart")
         return action
