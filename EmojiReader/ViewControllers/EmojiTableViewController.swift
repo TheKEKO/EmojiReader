@@ -14,11 +14,11 @@ class EmojiTableViewController: UITableViewController {
         Emoji(emoji: "⚽️", name: "Football", deskription: "Let's play football together", isFavourite: false),
         Emoji(emoji: "🐱", name: "Cat", deskription: "Cat is the cutest animal ", isFavourite: false)
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Emoji Reader"
-         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -26,22 +26,38 @@ class EmojiTableViewController: UITableViewController {
         let sorceVC = segue.source as! NewEmojiTableViewController
         let emoji = sorceVC.emoji
         
-        let newIndexPath = IndexPath(row: objects.count, section: 0)
-        objects.append(emoji)
-        tableView.insertRows(at: [newIndexPath], with: .fade)
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            objects[selectedIndexPath.row] = emoji
+            tableView.reloadRows(at: [selectedIndexPath], with: .fade)
+        } else { let newIndexPath = IndexPath(row: objects.count, section: 0)
+            objects.append(emoji)
+            tableView.insertRows(at: [newIndexPath], with: .fade)
+            
+        }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "editEmoji" else { return }
+        let indexPath = tableView.indexPathForSelectedRow!
+        let emoji = objects[indexPath.row]
+        let navigationVC = segue.destination as! UINavigationController
+        let newEmojiVC = navigationVC.topViewController as! NewEmojiTableViewController
+        newEmojiVC.emoji = emoji
+        newEmojiVC.title = "Edit"
+    }
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emojiCell", for: indexPath) as! EmojiTableViewCell
         let object = objects[indexPath.row]
